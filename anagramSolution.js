@@ -1,3 +1,4 @@
+//solution
 function funWithAnagrams(text){
     var arrayOfStringsSetToLowerCaseToReturn = [];
     var arrayOfAlpahbatizedStringsAlreadyFound = [];
@@ -29,7 +30,7 @@ function alphabatize(word){
 }
 
 
-
+//used for quick visual test of console output
 var test1 = ["dell", "ledl", "elld", "dlle"];
 var test2 = ["dell", "dell", "abc", "abc"];
 var test3 = ["dell", "", "abc", "abc"];
