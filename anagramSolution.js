@@ -8,7 +8,7 @@ function funWithAnagrams(text){
             let sortedWord = alphabatize(word);
             if (!ListOfAlpahbatizedStringsAlreadyFound.includes(sortedWord)){
                 ListOfAlpahbatizedStringsAlreadyFound.push(sortedWord);
-                ListOfLowerCaseStringsToReturn.push(word.toLowerCase());
+                ListOfLowerCaseStringsToReturn.push(sanatizeString(word));
             }
         }
     });
@@ -21,7 +21,7 @@ function alphabatize(word){
         return;
     }
 
-    word = word.toLowerCase();
+    word = sanatizeString(word);
     word = word.split('');
     word = word.sort();
     word = word.join('');
@@ -29,11 +29,15 @@ function alphabatize(word){
     return word;
 }
 
+function sanatizeString(word){
+    return word.toLowerCase().replace(/[^a-z\d]/g, '');
+}
+
 
 //used for quick visual test of console output
 var test1 = ["dell", "ledl", "elld", "dlle"];
-var test2 = ["dell", "dell", "abc", "abc"];
-var test3 = ["dell", "", "abc", "abc"];
+var test2 = ["dell@", " dell", "d e l l ", "ab!c", "abc*", "a^b&c"];
+var test3 = ["dell", "", " abc", "abc"];
 var test4 = ["Dell", "", "aBc", "abc"];
 var test5 = ["monk", "konm", "bbc", "cbb", "dell", "ledl"];
 var test6 = ["dell", "dell", "leld", "abc", "acb", "the", "teh", "het"];
