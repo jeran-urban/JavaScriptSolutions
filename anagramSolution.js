@@ -1,18 +1,18 @@
 //solution
 function funWithAnagrams(text){
-    var arrayOfStringsSetToLowerCaseToReturn = [];
-    var arrayOfAlpahbatizedStringsAlreadyFound = [];
+    var ListOfLowerCaseStringsToReturn = [];
+    var ListOfAlpahbatizedStringsAlreadyFound = [];
 
     text.forEach((word)=> {
         if (word){
             let sortedWord = alphabatize(word);
-            if (!arrayOfAlpahbatizedStringsAlreadyFound.includes(sortedWord)){
-                arrayOfAlpahbatizedStringsAlreadyFound.push(sortedWord);
-                arrayOfStringsSetToLowerCaseToReturn.push(word.toLowerCase());
+            if (!ListOfAlpahbatizedStringsAlreadyFound.includes(sortedWord)){
+                ListOfAlpahbatizedStringsAlreadyFound.push(sortedWord);
+                ListOfLowerCaseStringsToReturn.push(word.toLowerCase());
             }
         }
     });
-    return arrayOfStringsSetToLowerCaseToReturn.sort();
+    return ListOfLowerCaseStringsToReturn.sort();
 
 }
 
